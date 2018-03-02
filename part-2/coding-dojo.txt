@@ -1,0 +1,39 @@
+npx create-react-app sample-app
+
+cd sample-app
+
+npm start
+
+Dans ./src, on supprime tout sauf index.js et App.js
+
+index.js 
+```import React from 'react';
+import ReactDOM from 'react-dom';
+import { App } from './App';
+
+ReactDOM.render(<App />, document.getElementById('root'));```
+
+```import * as React from 'react';
+
+export class App extends React.Component {
+  render() {
+    return <div className="App">hello world</div>;
+  }
+}```
+
+
+```import * as React from "react";
+import GoogleMapReact from 'google-map-react';
+
+export class App extends React.Component {
+  render() {
+    return <div style={{height: "100vh"}}>
+      <GoogleMapReact
+        bootstrapURLKeys={{ key: "AIzaSyCOwDabYXgUqgb7nGr6lYDyU_zV0akhzvk" }}
+        defaultCenter={{lat: 44.843531, lng: -0.571213}}
+        defaultZoom={15}
+      ></GoogleMapReact>
+    </div>;
+  }
+}
+```
